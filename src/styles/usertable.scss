@@ -1,0 +1,137 @@
+.user-table-container {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-table {
+    width: 100%;
+    // border-collapse: collapse;
+  
+    th, td {
+      padding: 12px;
+      // border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+  
+    th {
+      // background: white;
+      font-weight: bold;
+    }
+  
+    .status {
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  
+    .inactive {
+      background: gray;
+      color: white;
+    }
+  
+    .pending {
+      background: rgb(226, 205, 166);
+      color: white;
+      border-radius: 30%;
+    }
+  }
+  
+
+// .user-table-container {
+//   margin-top: 20px;
+//   background: white;
+//   padding: 15px;
+//   border-radius: 10px;
+//   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+// }
+
+// .user-table {
+//   width: 100%;
+//   background-color: white;
+//   // border-collapse: collapse;
+
+//   th, td {
+//     padding: 12px;
+//     text-align: left;
+//   }
+
+//   th {
+//     font-weight: bold;
+//     position: relative;
+
+//     span {
+//       margin-left: 5px;
+//       cursor: pointer;
+//       display: inline-block;
+//     }
+
+//     svg {
+//       vertical-align: middle;
+//     }
+//   }
+
+//   tbody tr {
+//     &:nth-child(even) {
+//       background-color: #f9f9f9;
+//     }
+
+//     &:hover {
+//       background-color: #f1f1f1;
+//     }
+//   }
+
+//   .status {
+//     padding: 5px 10px;
+//     border-radius: 5px;
+//     font-weight: bold;
+//     text-transform: capitalize;
+//   }
+
+//   .inactive {
+//     background: gray;
+//     color: white;
+//   }
+
+//   .pending {
+//     background: rgb(226, 205, 166);
+//     color: white;
+//     border-radius: 30%;
+//   }
+// }
+
+// /* Pagination styles */
+// .pagination {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-top: 20px;
+
+//   button {
+//     background: #007bff;
+//     color: white;
+//     border: none;
+//     padding: 8px 15px;
+//     margin: 0 5px;
+//     border-radius: 5px;
+//     cursor: pointer;
+//     transition: background 0.3s;
+
+//     &:hover {
+//       background: #0056b3;
+//     }
+
+//     &:disabled {
+//       background: #ccc;
+//       cursor: not-allowed;
+//     }
+//   }
+
+//   span {
+//     margin: 0 10px;
+//     font-size: 14px;
+//     font-weight: bold;
+//   }
+// }
