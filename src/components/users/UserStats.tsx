@@ -40,8 +40,9 @@ const UserStats: React.FC = () => {
             </defs>
           </svg>
         </span>
-        <h3>2,453</h3>
         <p>Users</p>
+        <h2>2,453</h2>
+        
       </div>
       <div className="stat-card">
         <span className="icon">
@@ -67,8 +68,9 @@ const UserStats: React.FC = () => {
             />
           </svg>
         </span>
-        <h3>2,453</h3>
         <p>Active Users</p>
+        <h3>2,453</h3>
+        
       </div>
       <div className="stat-card">
         <span className="icon">
@@ -98,8 +100,9 @@ const UserStats: React.FC = () => {
             />
           </svg>
         </span>
-        <h3>12,453</h3>
+        
         <p>Users with Loans</p>
+        <h3>12,453</h3>
       </div>
       <div className="stat-card">
         <span className="icon">
@@ -185,8 +188,9 @@ const UserStats: React.FC = () => {
             </defs>
           </svg>
         </span>
-        <h3>102,453</h3>
         <p>Users with Savings</p>
+        <h3>102,453</h3>
+       
       </div>
     </div>
   );

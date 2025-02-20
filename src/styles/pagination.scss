@@ -1,34 +1,106 @@
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    gap: 10px;
+// .pagination {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin-top: 20px;
+//     gap: 10px;
   
-    button {
-      background-color: #4a90e2;
-      color: white;
-      border: none;
-      padding: 8px 16px;
+//     button {
+//       background-color: #4a90e2;
+//       color: white;
+//       border: none;
+//       padding: 8px 16px;
+//       border-radius: 5px;
+//       cursor: pointer;
+//       font-weight: bold;
+//       transition: background 0.3s ease;
+  
+//       &:hover {
+//         background-color: #357ab8;
+//       }
+  
+//       &:disabled {
+//         background-color: #ccc;
+//         cursor: not-allowed;
+//       }
+//     }
+  
+//     span {
+//       font-size: 16px;
+//       font-weight: bold;
+//       color: #333;
+//     }
+//   }
+  
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 14px;
+  background-color: #f9fafb;
+
+  .pagination-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #6b7280;
+
+    .pagination-dropdown {
+      padding: 6px 10px;
+      border: 1px solid #d1d5db;
       border-radius: 5px;
       cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s ease;
-  
+      background: #ffffff;
+    }
+  }
+
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .arrow-button {
+      background: #e5e7eb;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s ease;
+
       &:hover {
-        background-color: #357ab8;
+        background: #d1d5db;
       }
-  
+
       &:disabled {
-        background-color: #ccc;
+        opacity: 0.5;
         cursor: not-allowed;
       }
     }
-  
-    span {
-      font-size: 16px;
-      font-weight: bold;
-      color: #333;
+
+    .page-button {
+      background: transparent;
+      border: 1px solid #d1d5db;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s ease;
+
+      &:hover {
+        background: #e5e7eb;
+      }
+
+      &.active {
+        // background-color: #2563eb;
+        color: black;
+        border-color: #2563eb;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
     }
   }
-  
+}

@@ -1,80 +1,129 @@
-// .navbar {
-//     display: flex;
-//     justify-content: space-between;
-//     padding: 10px;
-//     background: white;
-//     border-bottom: 1px solid #ddd;
-    
-//     .search-input {
-//       width: 40%;
-//       padding: 5px;
-//     }
-  
-//     .navbar-right {
-//       display: flex;
-//       align-items: center;
-      
-//       .profile {
-//         display: flex;
-//         align-items: center;
-//         gap: 5px;
-//       }
-//     }
-//   }
-  
-
 .navbar {
-    background: white;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+
+  .navbar-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-  
-    .navbar-container {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: space-between;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .navbar-logo img {
+    height: 30px; // Restored to normal size
+  }
+
+  .navbar-search {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    max-width: 400px;
+
+    input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px 0 0 4px;
+      font-size: 16px;
+      outline: none;
+      height: 40px;
     }
-  
-    .navbar-search {
+
+    .search-btn {
+      background: #39CDCC;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 0 4px 4px 0;
       display: flex;
       align-items: center;
-      input {
-        padding: 8px;
-        border: 1px solid #ddd;
-        border-radius: 4px 0px 0px 4px;
-        // margin-right: 5px;
-      }
-      .search-btn {
-        background: #39CDCC;
-        color: white;
-        border: none;
-        padding: 8px;
-        cursor: pointer;
-        border-radius: 0px 4px 4px 0px;
-      }
+      justify-content: center;
+      height: 40px; // Matches input height
+      width: 45px;
+      font-size: 18px;
     }
-  
-    .navbar-actions {
+  }
+
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .docs-link {
+      color: #213F7D;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .notification-icon {
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .user-profile {
       display: flex;
       align-items: center;
-      .notification-icon {
-        margin-right: 15px;
-        margin-left: 15px;
-        cursor: pointer;
+      cursor: pointer;
+      position: relative;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 8px;
       }
-      .user-profile {
+
+      .username {
+        font-weight: bold;
+        color: #213F7D;
         display: flex;
         align-items: center;
-        img {
-          width: 35px;
-          height: 35px;
-          border-radius: 50%;
-          margin-right: 5px;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 50px; // Adjusted to be directly below the profile icon
+        right: 0; // Aligns to the right of the profile section
+        background: white;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        width: 150px;
+        z-index: 1000;
+        padding: 10px;
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            padding: 10px;
+            border-bottom: 1px solid #f1f1f1;
+            
+            a {
+              text-decoration: none;
+              color: #213F7D;
+              display: block;
+              width: 100%;
+            }
+
+            &:hover {
+              background: #f8f9fa;
+            }
+          }
         }
       }
     }
   }
-  
+}
+
+@media screen and (max-width: 800px){
+  .navbar-search {
+    display: none !important;; /* Hide the entire search bar container */
+  }
+}

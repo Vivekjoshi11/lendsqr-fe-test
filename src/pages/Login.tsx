@@ -90,7 +90,7 @@ const Login = () => {
               </span>
             </div>
 
-            <a href="#">FORGOT PASSWORD?</a>
+            <a href="http">FORGOT PASSWORD?</a>
 
             <button type="submit">LOG IN</button>
           </form>

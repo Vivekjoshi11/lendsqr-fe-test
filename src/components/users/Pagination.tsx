@@ -1,30 +1,87 @@
 import { useState } from "react";
 import "../../styles/pagination.scss";
 
-const usePagination = (totalItems: number, itemsPerPage: number) => {
-  const [currentPage, setCurrentPage] = useState<number>(1);
+interface PaginationProps {
+  totalItems: number;
+  itemsPerPage: number;
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
+  setItemsPerPage: (count: number) => void;
+}
+
+const Pagination = ({
+  totalItems,
+  itemsPerPage,
+  currentPage,
+  setCurrentPage,
+  setItemsPerPage
+}: PaginationProps) => {
+  console.log("setItemsPerPage in Parent:", setItemsPerPage);
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-
-  const currentItems = (items: any[]) => {
-    return items.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  
+  const generatePageNumbers = () => {
+    const pages = [];
+    for (let i = 1; i <= totalPages; i++) {
+      if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+        pages.push(i);
+      } else if (pages[pages.length - 1] !== "...") {
+        pages.push("...");
+      }
+    }
+    return pages;
   };
 
-  const nextPage = () => {
-    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
-  };
+  return (
+    <div className="pagination-container">
+      {/* Left Section */}
+      <div className="pagination-info">
+        <span>Showing</span>
 
-  const prevPage = () => {
-    if (currentPage > 1) setCurrentPage((prev) => prev - 1);
-  };
+        <select 
+  value={itemsPerPage} 
+  onChange={(e) => setItemsPerPage(Number(e.target.value))} 
+  className="pagination-dropdown"
+>
+  {[10, 20, 50, 100].map((num) => (
+    <option key={num} value={num}>
+      {num}
+    </option>
+  ))}
+</select>
+        <span>out of {totalItems}</span>
+      </div>
 
-  return {
-    currentPage,
-    totalPages,
-    currentItems,
-    nextPage,
-    prevPage,
-    setCurrentPage,
-  };
+      {/* Right Section */}
+      <div className="pagination-controls">
+        <button 
+          onClick={() => setCurrentPage(currentPage - 1)} 
+          disabled={currentPage === 1}
+          className="arrow-button"
+        >
+          {"<"}
+        </button>
+
+        {generatePageNumbers().map((number, index) => (
+          <button
+            key={index}
+            className={`page-button ${number === currentPage ? "active" : ""}`}
+            onClick={() => typeof number === "number" && setCurrentPage(number)}
+            disabled={number === "..."}
+          >
+            {number}
+          </button>
+        ))}
+
+        <button 
+          onClick={() => setCurrentPage(currentPage + 1)} 
+          disabled={currentPage === totalPages}
+          className="arrow-button"
+        >
+          {">"}
+        </button>
+      </div>
+    </div>
+  );
 };
 
-export default usePagination;
+export default Pagination;
