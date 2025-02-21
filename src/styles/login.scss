@@ -142,9 +142,11 @@ body {
 }
 
 // Responsive Design
-@media (max-width: 900px) {
+@media (max-width: 780px) {
   .login-container {
-    flex-direction: column;
+    // flex-direction: column;
+    
+    width: 100%;
   }
 
   .login-left {
@@ -157,10 +159,20 @@ body {
   }
 
   .login-right {
-    width: 100%;
+    width: 100% !important;
     justify-content: center;
+    
     // height: 500vh;
 
+  }
+  .login-welcome{
+  margin-top: 50%;
+  }
+  .title-container-head{
+    margin-top: 20%;
+    margin-left: 250px;
+    margin-bottom: 50px;
+    display: none;
   }
   
 }

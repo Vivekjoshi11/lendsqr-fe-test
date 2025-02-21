@@ -99,12 +99,14 @@
   margin-bottom: 10px;
 
   .filter-button {
-    background-color: #3b82f6;
-    color: white;
-    border: none;
+    background-color: white;
+    color: black;
+    // border: 1px solid black;
+    box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.2);
     padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
+
   }
 
   .filter-dropdown {
@@ -168,8 +170,12 @@
   }
 
   .user-table thead {
-    display: none; /* Hide table headers */
+    font-size: small;
   }
+  // svg{
+  //   display: none;
+  // }
+
 
   .user-table tbody, .user-table tr, .user-table td {
     // display: block;

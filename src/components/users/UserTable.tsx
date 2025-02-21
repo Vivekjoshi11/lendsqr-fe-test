@@ -40,7 +40,8 @@ const UserTable: React.FC<UserTableProps> = ({ onViewDetails }) => {
     const fetchUsers = async () => {
       try {
         const response = await fetch(
-          "https://run.mocky.io/v3/a910bfb3-2a90-4286-ad8d-d4ff228274a9"
+          // "https://run.mocky.io/v3/a910bfb3-2a90-4286-ad8d-d4ff228274a9"
+          "https://run.mocky.io/v3/28bc7bd6-1a3a-462b-8db2-a20686019edc"
         );
         if (!response.ok) throw new Error("Failed to fetch users");
         const data = await response.json();
@@ -75,21 +76,15 @@ const UserTable: React.FC<UserTableProps> = ({ onViewDetails }) => {
     );
   });
 
-
   const startIndex = (currentPage - 1) * itemsPerPage;
-const paginatedUsers = filteredUsers.slice(
-  startIndex,
-  startIndex + itemsPerPage
-);
-
+  const paginatedUsers = filteredUsers.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
   const toggleDropdown = (userId: number) => {
     setOpenDropdown((prev) => (prev === userId ? null : userId));
   };
-
-  // function setItemsPerPage(count: number): void {
-  //   throw new Error("Function not implemented.");
-  // }
 
   return (
     <div className="user-table-container">
@@ -98,7 +93,19 @@ const paginatedUsers = filteredUsers.slice(
           className="filter-button"
           onClick={() => setShowFilter(!showFilter)}
         >
-          Filter ⚙
+          Filter{" "}
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.22222 13.3333H9.77778V11.5555H6.22222V13.3333ZM0 2.66666V4.44443H16V2.66666H0ZM2.66667 8.88888H13.3333V7.1111H2.66667V8.88888Z"
+              fill="#545F7D"
+            />
+          </svg>
         </button>
         {showFilter && (
           <div className="filter-dropdown">
@@ -163,7 +170,7 @@ const paginatedUsers = filteredUsers.slice(
             <div className="btn">
               <button
                 className="Reset"
-                onClick={() =>
+                onClick={() => {
                   setFilters({
                     organization: "",
                     username: "",
@@ -172,8 +179,9 @@ const paginatedUsers = filteredUsers.slice(
                     status: "",
                     fromDate: "",
                     toDate: "",
-                  })
-                }
+                  });
+                  setShowFilter(!showFilter);
+                }}
               >
                 Reset
               </button>
@@ -197,30 +205,13 @@ const paginatedUsers = filteredUsers.slice(
           <table className="user-table">
             <thead>
               <tr>
-                <th>Organization <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6.22222 13.3333H9.77778V11.5555H6.22222V13.3333ZM0 2.66666V4.44443H16V2.66666H0ZM2.66667 8.88888H13.3333V7.1111H2.66667V8.88888Z" fill="#545F7D"/>
-</svg>
-</th>
-                <th>Username <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6.22222 13.3333H9.77778V11.5555H6.22222V13.3333ZM0 2.66666V4.44443H16V2.66666H0ZM2.66667 8.88888H13.3333V7.1111H2.66667V8.88888Z" fill="#545F7D"/>
-</svg>
-</th>
-                <th>Email <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6.22222 13.3333H9.77778V11.5555H6.22222V13.3333ZM0 2.66666V4.44443H16V2.66666H0ZM2.66667 8.88888H13.3333V7.1111H2.66667V8.88888Z" fill="#545F7D"/>
-</svg>
-</th>
-                <th>Phone Number <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6.22222 13.3333H9.77778V11.5555H6.22222V13.3333ZM0 2.66666V4.44443H16V2.66666H0ZM2.66667 8.88888H13.3333V7.1111H2.66667V8.88888Z" fill="#545F7D"/>
-</svg>
-</th>
-                <th>Date Joined <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6.22222 13.3333H9.77778V11.5555H6.22222V13.3333ZM0 2.66666V4.44443H16V2.66666H0ZM2.66667 8.88888H13.3333V7.1111H2.66667V8.88888Z" fill="#545F7D"/>
-</svg>
-</th>
-                <th>Status <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6.22222 13.3333H9.77778V11.5555H6.22222V13.3333ZM0 2.66666V4.44443H16V2.66666H0ZM2.66667 8.88888H13.3333V7.1111H2.66667V8.88888Z" fill="#545F7D"/>
-</svg>
-</th>
+                <th>Organization</th>
+
+                <th onClick={() => setShowFilter(!showFilter)}>Username</th>
+                <th>Email </th>
+                <th>Phone Number</th>
+                <th>Date Joined</th>
+                <th>Status</th>
                 {/* <th>Actions</th> */}
               </tr>
             </thead>
@@ -329,7 +320,6 @@ const paginatedUsers = filteredUsers.slice(
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             setItemsPerPage={setItemsPerPage}
-
           />
         </>
       )}
