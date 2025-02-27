@@ -3,7 +3,7 @@ import Navbar from "../components/layout/Navbar";
 import Sidebar from "../components/layout/Sidebar";
 import UserStats from "../components/users/UserStats";
 import UserTable from "../components/users/UserTable";
-import UserDetail from "../components/layout/userdetail"; // Ensure this path is correct
+import UserDetail from "../components/layout/userdetail"; 
 import "../styles/dashboard.scss";
 
 const Dashboard: React.FC = () => {

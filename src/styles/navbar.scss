@@ -15,7 +15,7 @@
   }
 
   .navbar-logo img {
-    height: 30px; // Restored to normal size
+    height: 30px; 
   }
 
   .navbar-search {
@@ -43,7 +43,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 40px; // Matches input height
+      height: 40px;
       width: 45px;
       font-size: 18px;
     }
@@ -87,8 +87,8 @@
 
       .dropdown-menu {
         position: absolute;
-        top: 50px; // Adjusted to be directly below the profile icon
-        right: 0; // Aligns to the right of the profile section
+        top: 50px;
+        right: 0;
         background: white;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         border-radius: 8px;

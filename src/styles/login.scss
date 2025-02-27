@@ -6,10 +6,9 @@
 }
 
 body {
-  background: #b99898; /* Gray background */
+  background: #b99898;
 }
 
-// Login Container
 .login-container {
   display: flex;
   height: 100vh;
@@ -47,7 +46,7 @@ body {
     margin-left:200px ;
 
     .head-image {
-      max-width: 250px; /* Adjust logo size */
+      max-width: 250px; 
     }
   }
 
@@ -56,10 +55,9 @@ body {
   }
 }
 
-// Right Side (Login Form)
 .login-right {
   width: 50%;
-  background: #f9f6f6; /* Gray background */
+  background: #f9f6f6; 
   display: flex;
   align-items: center;
   justify-content: start;
@@ -72,7 +70,6 @@ body {
     text-align: center;
     width: 80%;
     max-width: 400px;
-    // box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
     h1 {
       font-size: 40px;
@@ -142,9 +139,9 @@ body {
 }
 
 // Responsive Design
-@media (max-width: 780px) {
+@media (max-width: 900px) {
   .login-container {
-    // flex-direction: column;
+    flex-direction: column;
     
     width: 100%;
   }
@@ -162,8 +159,6 @@ body {
     width: 100% !important;
     justify-content: center;
     
-    // height: 500vh;
-
   }
   .login-welcome{
   margin-top: 50%;
@@ -172,7 +167,6 @@ body {
     margin-top: 20%;
     margin-left: 250px;
     margin-bottom: 50px;
-    display: none;
   }
   
 }
