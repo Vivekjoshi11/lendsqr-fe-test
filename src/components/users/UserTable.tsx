@@ -40,7 +40,6 @@ const UserTable: React.FC<UserTableProps> = ({ onViewDetails }) => {
     const fetchUsers = async () => {
       try {
         const response = await fetch(
-          // "https://run.mocky.io/v3/a910bfb3-2a90-4286-ad8d-d4ff228274a9"
           "https://run.mocky.io/v3/28bc7bd6-1a3a-462b-8db2-a20686019edc"
         );
         if (!response.ok) throw new Error("Failed to fetch users");
@@ -154,7 +153,6 @@ const UserTable: React.FC<UserTableProps> = ({ onViewDetails }) => {
                 setFilters({ ...filters, fromDate: e.target.value })
               }
             />
-            {/* <input type="date" placeholder="To Date" value={filters.toDate} onChange={(e) => setFilters({ ...filters, toDate: e.target.value })} /> */}
             <p>Status</p>
             <select
               value={filters.status}
